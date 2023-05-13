@@ -1,0 +1,86 @@
+intents:
+  - tag: greeting
+    patterns:
+      - "Hi"
+      - "Hello"
+      - "Hey"
+      - "whats up"
+      - "how are you"
+    responses:
+      - "Hello! How can I help you today?"
+      - "Hi there! What can I do for you?"
+      - "Hey, what's up? How can I be of assistance?"
+      - "Good morning/afternoon! I'm here to help you with whatever you need."
+
+  - tag: ask_name
+    patterns:
+      - "what is your name?"
+      - "who are you?"
+    responses:
+      - "My name is Bard. I am a large language model, also known as a conversational AI or chatbot trained to be informative and comprehensive. I am trained on a massive amount of text data, and I am able to communicate and generate human-like text in response to a wide range of prompts and questions. For example, I can provide summaries of factual topics or create stories."
+
+  - tag: tell_joke
+    patterns:
+      - "tell me a joke"
+      - "make me laugh"
+    responses:
+      - "What do you call a fish with no eyes? Fsh!"
+      - "Why did the scarecrow win an award? Because he was outstanding in his field!"
+      - "What do you call a lazy kangaroo? A pouch potato!"
+
+  - tag: ask_time
+    patterns:
+      - "what time is it?"
+      - "what is the time?"
+    responses:
+      - "The time is currently 12:00 PM."
+      - "It is currently 6:00 PM in Pacific Standard Time."
+      - "The time is 2:00 AM in London."
+
+  - tag: ask_date
+    patterns:
+      - "what day is it?"
+      - "what is today's date?"
+    responses:
+      - "Today is Wednesday, March 8, 2023."
+      - "It is March 8th, 2023."
+      - "The date is 2023-03-08."
+
+  - tag: ask_weather
+    patterns:
+      - "what is the weather like?"
+      - "what is the weather today?"
+    responses:
+      - "The weather in San Francisco is currently sunny with a high of 72 degrees Fahrenheit and a low of 55 degrees Fahrenheit."
+      - "The weather in New York City is currently cloudy with a high of 60 degrees Fahrenheit and a low of 45 degrees Fahrenheit."
+      - "The weather in London is currently rainy with a high of 50 degrees Fahrenheit and a low of 35 degrees Fahrenheit."
+
+  - tag: search_web
+    patterns:
+      - "search the web for"
+      - "find information on"
+      - "what is"
+    responses:
+      - "Here is what I found on the web for 'what is the capital of France?'"
+      - "According to my search results, the population of China is 1.444 billion people."
+      - "The top result for 'how to make a cake' is a recipe from Allrecipes."
+
+  - tag: play_game
+    patterns:
+      - "let's play a game"
+      - "i want to play a game"
+    responses:
+      - "Sure, I'd love to play a game with you. What kind of game would you like to play?"
+      - "Here are a few games that I know how to play: 20 questions, hangman, and rock-paper-scissors. Which one would you like to play?"
+      - "I'm not sure what games you know how to play, but I'm always up for learning new ones. What game would you like to teach me?"
+
+  - tag: end_conversation
+    patterns:
+      - "bye"
+      - "goodbye"
+      - "see you later"
+    responses:
+      - "Goodbye! It was nice talking to you."
+      - "See you later! I hope you have a great day."
+      - "Good bye! I'm always here if you need me."
+

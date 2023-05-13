@@ -1,0 +1,8 @@
+Flask
+nltk
+numpy
+tflearn
+tensorflow
+PyYAML
+libretranslate
+openai-whisper

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TENSEWHISPER bot</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 18px;
+        color: gray;
+        margin-bottom: 20px;
+      }
+
+      .open-chatbot-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        background-color:  #2c3e50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+      }
+
+      .open-chatbot-btn:active {
+        background-color: #3e8e41;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      .fa-comments {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      .chatbot-widget {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        display: none;
+        background-color: white;
+        width: 380px;
+        height: 500px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .chatbot-widget iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .close-chatbot-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        color: #f44336;
+        cursor: pointer;
+        outline: none;
+       
+        border: none;
+        font-size: 24px;
+      }
+
+      .close-chatbot-btn:hover {
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .open-chatbot-btn {
+          bottom: 10px;
+          right: 10px;
+        }
+
+        .chatbot-widget {
+          bottom: 60px;
+          right: 10px;
+          width: 250px;
+          height: 450px;
+        }
+      }
+
+      header {
+        width: 1000px;
+        height: 200px;
+        margin: 0 auto;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        background: #d4e0e6;
+    }
+
+    section {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        margin: 25px auto;
+    }
+
+    section > div.left {
+        width: 420px;
+        float: left;
+    }
+
+    section > div.right {
+        width: calc(100% - 420px);
+        float: left;
+        padding-left: 25px;
+    }
+
+    section > div.right > div {
+        width: calc(50% - 5px);
+        height: 250px;
+        background: #e8f1f5;
+        font-size: 15px;
+        padding: 50px;
+        float: left;
+        line-height: 30px;
+        color: #697276;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    section > div.right > div:nth-child(2n) {
+        margin-right: 10px;
+    }
+
+    section > div.right > div:first-child {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    section > div.right > div > p {
+        width: 90%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background: #d4e0e6;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+
+    section > div.right > div > p:first-child {
+        width: 40%;
+        background: #c2d0d7;
+        padding: 7px;
+        margin-bottom: 25px;
+    }
+
+    section > div.right > div > p:nth-child(2n) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        iframe {
+            width: 100%;
+            height: 300px; /* adjust this value as needed */
+        }
+    }
+    
+
+    @media only screen and (max-width: 1024px) {
+        header, section {
+            width: 90%;
+        }
+        section > div.right > div {
+            width: 100%;
+            margin: 0 0 20px;
+        }
+    }
+    @media (max-width: 1200px) {
+        .chatbot-widget {
+          width: 340px;
+          height: 450px;
+        }
+      }
+      
+      @media (max-width: 992px) {
+        .chatbot-widget {
+          width: 300px;
+          height: 400px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .chatbot-widget {
+            width: 100%;
+            height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>TENSEWHISPER</h1>
+        <p>Welcome to our BOT</p>
+      </header>
+      <section>
+        <div class="left">
+
+        </div>
+
+        <div class="right">
+            <div>
+                <p></p><p></p><p></p><p></p><p></p><p></p>
+            </div>
+            
+        </div>
+    </section>
+
+      <div class="content">
+        
+        
+        
+        <!-- Your website content goes here -->
+      </div>
+    </div>
+
+    <button class="open-chatbot-btn">
+      <i class="fas fa-comments"></i>
+      Chat with Us
+    </button>
+
+    <div id="iframe" class="chatbot-widget">
+      <iframe src="/home"></iframe>
+      <button class="close-chatbot-btn">&times;</button>
+    </div>
+
+    <script>
+      const openChatbotBtn = document.querySelector(".open-chatbot-btn");
+      const chatbotWidget = document.querySelector(".chatbot-widget");
+      const closeChatbotBtn = document.querySelector(".close-chatbot-btn");
+
+      openChatbotBtn.addEventListener("click", function () {
+        chatbotWidget.style.display = "block";
+      });
+
+      closeChatbotBtn.addEventListener("click", function () {
+        chatbotWidget.style.display = "none";
+        var iframe = document.getElementById("iframe");
+        iframe.parentNode.removeChild(iframe);
+        location.reload();
+      });
+    </script>
+  </body>
+</html>
