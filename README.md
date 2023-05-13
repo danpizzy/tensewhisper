@@ -9,6 +9,13 @@ Features
     uses completely opensource tools so translation is easier and free
     Is easy to use
 
+
+
+EXAMPLE
+![TENSE](https://github.com/danpizzy/tensewhisper/assets/53155066/cf93f41f-c90e-41da-bcbb-cb50cd20648f)
+
+
+
 How to use
 
     Clone the repository to your local machine.
