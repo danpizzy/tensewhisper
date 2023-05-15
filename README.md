@@ -13,8 +13,9 @@ Features
 
 EXAMPLE
 ![TENSE](https://github.com/danpizzy/tensewhisper/assets/53155066/cf93f41f-c90e-41da-bcbb-cb50cd20648f)
+![TENSE](https://im5.ezgif.com/tmp/ezgif-5-4a3ae108b5.gif)
 
-
+https://im5.ezgif.com/tmp/ezgif-5-4a3ae108b5.gif
 
 How to use
 
